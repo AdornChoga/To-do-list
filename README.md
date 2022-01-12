@@ -3,6 +3,7 @@
 # To-do-list
 
 > In this project I created the structure of a minimalist To-Do-List using HTML and styled it using CSS. I loaded the tasks on the to-do-list dynamically using JavaScript.
+> I also used JavaScript to for the add-remove task functionality.
 I used webpack to bundle the modules in the code base.
 
 ## Built With
