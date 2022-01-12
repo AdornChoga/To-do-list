@@ -4,11 +4,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/2b1476549e.js" crossorigin="anonymous"></script>
   <title>To-do-list</title>
 </head>
 <body>
-  <h1>Hello world!</h1>
-  <p>My name is Adorn Choga</p>
-  
+  <ul class="to-do-list">
+    <li>Today's To Do
+      <i class="fas fa-sync-alt"></i>
+    </li>
+    <li id="input">
+      <input type="text" id="add" placeholder="Add to your list..." value="">
+      <i class="fas fa-upload upload"></i>
+    </li>
+    <div class="dynamic">
+
+    </div>
+    <li id="clear">
+      <button type="button">Clear all completed<button>
+    </li>
+  </ul>
 </body>
 </html>

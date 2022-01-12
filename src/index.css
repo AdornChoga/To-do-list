@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.to-do-list {
+  list-style-type: none;
+  padding: 0;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0rem 0rem 0.5rem 0.3rem rgba(0, 0, 0, 0.4);
+}
+
+li {
+  position: relative;
+  padding: 0.7em 0.4em;
+  border: 1px solid rgb(197, 194, 194);
+  font-size: 3rem;
+}
+
+.item {
+  background-color: yellow;
+}
+
+.fas {
+  position: absolute;
+  right: 2rem;
+  color: gray;
+  font-size: 2.2rem;
+}
+
+.fa-upload {
+  top: 2rem;
+}
+
+.delete {
+  display: none;
+}
+
+.to-do {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+}
+
+.task-description {
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+#input {
+  padding: 0;
+  font-size: 0;
+}
+
+#add {
+  display: inline-block;
+  width: 100%;
+  padding: 2.5rem 0;
+  font-size: 2.5rem;
+  padding-left: 1em;
+}
+
+#add::placeholder {
+  font-style: italic;
+}
+
+#clear {
+  text-align: center;
+  background-color: rgb(192, 188, 188)
+}
+
+#clear > button {
+  background-color: rgb(192, 188, 188);
+  border: none;
+  font-size: 2.5rem;
+}
+
+#clear > button:hover {
+  text-decoration: underline black;
+}
