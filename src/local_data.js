@@ -1,6 +1,6 @@
 export default class tasksData {
   static fetchData() {
-    return JSON.parse(localStorage.getItem('tasks'))
+    return JSON.parse(localStorage.getItem('tasks'));
   }
 
   static setData(data) {

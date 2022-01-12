@@ -1,10 +1,11 @@
 import tasksData from './local_data.js';
+
 const listContainer = document.querySelector('.dynamic');
 
 function loadTasks() {
   listContainer.innerHTML = '';
-  if(localStorage.getItem('tasks') === null) {
-    tasksData.setData([])
+  if (localStorage.getItem('tasks') === null) {
+    tasksData.setData([]);
   }
   const tasks = tasksData.fetchData();
   for (let i = 0; i < tasks.length; i += 1) {
@@ -15,11 +16,11 @@ function loadTasks() {
       <i class="fas fa-ellipsis-v option"></i>
       <i class="fas fa-trash-alt delete" id="${tasks[i].id}"></i>
     </li>
-    `
-  }  
+    `;
+  }
 }
 
-export {listContainer, loadTasks}
+export { listContainer, loadTasks };
 
 // const tasks = [
 //   { description: 'read a novel', completed: false, index: 0 },

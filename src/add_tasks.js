@@ -1,13 +1,12 @@
 import tasksData from './local_data.js';
-import { listContainer } from './load.js';
-import {loadTasks} from './load.js';
+import { listContainer, loadTasks } from './load.js';
 
-const taskToAdd = document.querySelector('#add')
+const taskToAdd = document.querySelector('#add');
 
 const addTask = () => {
   const tasks = tasksData.fetchData();
-  if (taskToAdd.value !== "") {
-    const todo = {description: taskToAdd.value, completed: false, id: tasks.length}
+  if (taskToAdd.value !== '') {
+    const todo = { description: taskToAdd.value, completed: false, id: tasks.length };
     listContainer.innerHTML += `
     <li>
       <input type="checkbox" name="task" value="task1" class="to-do">
@@ -15,13 +14,13 @@ const addTask = () => {
       <i class="fas fa-ellipsis-v option"></i>
       <i class="fas fa-trash-alt delete" id="${tasks.id}></i>
    </li>
-    `
-    taskToAdd.value = "";
-    tasks.push(todo)
-    tasksData.setData(tasks)
+    `;
+    taskToAdd.value = '';
+    tasks.push(todo);
+    tasksData.setData(tasks);
     listContainer.innerHTML = '';
     loadTasks();
   }
-}
+};
 
 export default addTask;
