@@ -1,5 +1,5 @@
 import './index.css';
 
-import loadTasks from './load.js'
+import loadTasks from './load.js';
 
-loadTasks()
+loadTasks();
