@@ -1,7 +1,8 @@
 import './index.css';
 import {loadTasks,listContainer} from './load.js';
 import addTask from './add_tasks';
-import tasksData from './local_data.js'
+import tasksData from './local_data.js';
+import updateIndexes from './update_indexes.js';
 
 const add = document.querySelector('.fa-upload')
 const refresh = document.querySelector('.fa-sync-alt')
@@ -35,6 +36,8 @@ listContainer.addEventListener('click', (event) => {
     let tasks = tasksData.fetchData();
     let newTasks = tasks.filter(obj => obj.id !== Number(event.target.id))
     tasksData.setData(newTasks)
+    updateIndexes();
+    loadTasks();
   }
 })
 

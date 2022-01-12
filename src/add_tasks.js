@@ -7,7 +7,7 @@ const taskToAdd = document.querySelector('#add')
 const addTask = () => {
   const tasks = tasksData.fetchData();
   if (taskToAdd.value !== "") {
-    const todo = {description: taskToAdd.value, completed: false, id: Date.now()}
+    const todo = {description: taskToAdd.value, completed: false, id: tasks.length}
     listContainer.innerHTML += `
     <li>
       <input type="checkbox" name="task" value="task1" class="to-do">
