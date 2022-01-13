@@ -33,6 +33,7 @@ span[contenteditable="true"] {
   outline: none;
   display: inline-block;
   color: blue;
+  width: 90%;
 }
 
 .item {
@@ -52,22 +53,13 @@ span[contenteditable="true"] {
   top: 2rem;
 }
 
-.show {
-  display: none;
-  flex-direction: column;
+.delete {
   position: absolute;
-  right: 1rem;
-  top: 0.8rem;
-}
-
-.show i {
-  font-size: 2.5rem;
-  display: inline-block;
+  right: 1.5rem;
+  top: 2rem;
   color: gray;
-}
-
-.show i + i {
-  margin-top: 1rem;
+  display: none;
+  font-size: 2.5rem;
 }
 
 .to-do {
