@@ -9,6 +9,7 @@ import checkBox from './checkbox.js';
 const add = document.querySelector('.fa-upload');
 const refresh = document.querySelector('.fa-sync-alt');
 const clear = document.querySelector('.clear')
+const input = document.querySelector('#add')
 
 loadTasks();
 
@@ -16,6 +17,13 @@ refresh.addEventListener('click', () => {
   listContainer.innerHTML = '';
   loadTasks();
 });
+
+input.addEventListener('keyup', (event) => {
+  if(event.keyCode === 13) {
+    event.preventDefault();
+    add.click();
+  }
+})
 
 add.addEventListener('click', addTask);
 
