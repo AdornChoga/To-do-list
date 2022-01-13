@@ -14,7 +14,9 @@ const input = document.querySelector('#add')
 loadTasks();
 
 refresh.addEventListener('click', () => {
-  listContainer.innerHTML = '';
+  let tasks = tasksData.fetchData();
+  tasks = [];
+  tasksData.setData(tasks);
   loadTasks();
 });
 
