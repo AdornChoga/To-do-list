@@ -11,7 +11,8 @@ function loadTasks() {
   for (let i = 0; i < tasks.length; i += 1) {
     listContainer.innerHTML += `
     <li>
-      <input type="checkbox" name="task" value="task1" class="to-do" >
+      <input type="checkbox" name="task" value="task1" class="to-do" 
+      ${tasks[i].completed === true ? 'checked':''}>
       <span class="task-description">${tasks[i].description}</span>
       <i class="fas fa-ellipsis-v option"></i>
       <span class="show">

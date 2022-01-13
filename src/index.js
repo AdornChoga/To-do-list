@@ -4,9 +4,11 @@ import addTask from './add_tasks.js';
 import tasksData from './local_data.js';
 import updateIndexes from './update_indexes.js';
 import changeTask from './change_task.js';
+import checkBox from './checkbox.js';
 
 const add = document.querySelector('.fa-upload');
 const refresh = document.querySelector('.fa-sync-alt');
+const clear = document.querySelector('.clear')
 
 loadTasks();
 
@@ -37,6 +39,16 @@ listContainer.addEventListener('click', (event) => {
     changeTask(event.path[2].children[1].textContent, Number(id));
     loadTasks();
   }
+  if(event.target.classList.contains('to-do')) {
+    const {id}  = event.path[1].lastElementChild.children[1];
+    if(event.target.checked===true) {
+      checkBox(event.target.checked, id)
+      event.target.checked = true;
+    } else {
+      checkBox(event.target.checked,id)
+      event.target.checked = false
+    }
+  }
 });
 
 listContainer.addEventListener('mouseover', (event) => {
@@ -50,3 +62,20 @@ listContainer.addEventListener('mouseover', (event) => {
     event.target.style.cursor = 'pointer';
   }
 });
+
+clear.addEventListener('click', () => {
+  let tasks = tasksData.fetchData();
+  tasks = tasks.filter(task => task.completed !== true);
+  console.log(tasks);
+  tasksData.setData(tasks);
+  updateIndexes()
+  loadTasks();
+})
+
+clear.addEventListener('mouseover', () => {
+  clear.style.cursor = 'pointer';
+})
+
+refresh.addEventListener('mouseover', () => {
+  refresh.style.cursor = 'pointer';
+})
