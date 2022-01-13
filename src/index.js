@@ -10,7 +10,6 @@ const add = document.querySelector('.fa-upload');
 const refresh = document.querySelector('.fa-sync-alt');
 const clear = document.querySelector('.clear');
 const input = document.querySelector('#add');
-const body = document.querySelector('body')
 
 loadTasks();
 
@@ -22,11 +21,11 @@ refresh.addEventListener('click', () => {
 });
 
 input.addEventListener('keyup', (event) => {
-  if(event.keyCode === 13) {
+  if (event.keyCode === 13) {
     event.preventDefault();
     add.click();
   }
-})
+});
 
 add.addEventListener('click', addTask);
 
@@ -40,7 +39,7 @@ listContainer.addEventListener('click', (event) => {
 
   if (event.target.classList.contains('task-item')) {
     event.target.children[1].contentEditable = true;
-    event.target.classList.add('item')
+    event.target.classList.add('item');
     event.target.children[2].style.display = 'none';
     event.target.children[3].style.display = 'inline';
   }
@@ -54,14 +53,14 @@ listContainer.addEventListener('click', (event) => {
     loadTasks();
   }
 
-  if(event.target.classList.contains('to-do')) {
-    const {id}  = event.path[1].lastElementChild;
-    if(event.target.checked===true) {
-      checkBox(event.target.checked, id)
+  if (event.target.classList.contains('to-do')) {
+    const { id } = event.path[1].lastElementChild;
+    if (event.target.checked === true) {
+      checkBox(event.target.checked, id);
       event.target.checked = true;
     } else {
-      checkBox(event.target.checked,id)
-      event.target.checked = false
+      checkBox(event.target.checked, id);
+      event.target.checked = false;
     }
   }
 });
@@ -79,28 +78,28 @@ listContainer.addEventListener('mouseover', (event) => {
 });
 
 listContainer.addEventListener('keydown', (event) => {
-  if(event.target.classList.contains('task-description')) {
-    if(event.keyCode === 13) {
+  if (event.target.classList.contains('task-description')) {
+    if (event.keyCode === 13) {
       event.preventDefault();
       const { id } = event.path[1].children[3];
       changeTask(event.path[1].children[1].textContent, Number(id));
       loadTasks();
     }
   }
-})
+});
 
 clear.addEventListener('click', () => {
   let tasks = tasksData.fetchData();
-  tasks = tasks.filter(task => task.completed !== true);
+  tasks = tasks.filter((task) => task.completed !== true);
   tasksData.setData(tasks);
-  updateIndexes()
+  updateIndexes();
   loadTasks();
-})
+});
 
 clear.addEventListener('mouseover', () => {
   clear.style.cursor = 'pointer';
-})
+});
 
 refresh.addEventListener('mouseover', () => {
   refresh.style.cursor = 'pointer';
-})
+});
