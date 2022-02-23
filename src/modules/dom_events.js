@@ -3,9 +3,10 @@ import tasksData from './local_data.js';
 import updateIndexes from './update_indexes.js';
 import changeTask from './change_task.js';
 import checkBox from './checkbox.js';
-import { listContainer, loadTasks } from './load.js';
+import loadTasks from './load.js';
 
 const domEvents = () => {
+  const listContainer = document.querySelector('.dynamic');
   const add = document.querySelector('.fa-upload');
   const refresh = document.querySelector('.fa-sync-alt');
   const clear = document.querySelector('.clear');
@@ -15,7 +16,7 @@ const domEvents = () => {
     let tasks = tasksData.fetchData();
     tasks = [];
     tasksData.setData(tasks);
-    loadTasks();
+    loadTasks(listContainer);
   });
 
   input.addEventListener('keyup', (event) => {
@@ -27,7 +28,7 @@ const domEvents = () => {
 
   add.addEventListener('click', () => {
     const taskToAdd = document.querySelector('#add');
-    addTask(taskToAdd);
+    addTask(taskToAdd, listContainer);
   });
 
   listContainer.addEventListener('click', (event) => {
@@ -50,8 +51,8 @@ const domEvents = () => {
       const tasks = tasksData.fetchData();
       const newTasks = tasks.filter((obj) => obj.id !== Number(event.target.id));
       tasksData.setData(newTasks);
-      updateIndexes();
-      loadTasks();
+      updateIndexes(tasksData.fetchData());
+      loadTasks(listContainer);
     }
 
     if (event.target.classList.contains('to-do')) {
@@ -84,7 +85,7 @@ const domEvents = () => {
         event.preventDefault();
         const { id } = event.path[1].children[3];
         changeTask(event.path[1].children[1].textContent, Number(id));
-        loadTasks();
+        loadTasks(listContainer);
       }
     }
   });
@@ -93,8 +94,8 @@ const domEvents = () => {
     let tasks = tasksData.fetchData();
     tasks = tasks.filter((task) => task.completed !== true);
     tasksData.setData(tasks);
-    updateIndexes();
-    loadTasks();
+    updateIndexes(tasksData.fetchData());
+    loadTasks(listContainer);
   });
 
   clear.addEventListener('mouseover', () => {
