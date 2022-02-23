@@ -49,6 +49,11 @@ span[contenteditable="true"] {
   background-color: yellow;
 }
 
+.fas,
+.clear {
+  cursor: pointer;
+}
+
 .fa-upload,
 .fa-sync-alt,
 .fa-ellipsis-v {
