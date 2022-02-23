@@ -17,6 +17,13 @@ const loadTasks = (listContainer) => {
     </li>
     `;
   }
+  const todos = document.querySelectorAll('.task-description');
+  tasks.forEach((task, index) => {
+    if (task.completed) {
+      todos[index].style.textDecoration = 'line-through';
+      todos[index].style.opacity = '0.5';
+    }
+  });
 };
 
 export default loadTasks;
