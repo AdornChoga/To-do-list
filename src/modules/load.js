@@ -11,12 +11,19 @@ const loadTasks = (listContainer) => {
     <li class="task-item">
       <input type="checkbox" name="task" value="task1" class="to-do"
       ${tasks[i].completed === true ? 'checked' : ''}>
-      <span class="task-description">${tasks[i].description}</span>
+      <span class="task-description" >${tasks[i].description}</span>
       <i class="fas fa-ellipsis-v option"></i>
       <i class="fas fa-trash-alt delete" id="${tasks[i].id}"></i>
     </li>
     `;
   }
+  const todos = document.querySelectorAll('.task-description');
+  tasks.forEach((task, index) => {
+    if (task.completed) {
+      todos[index].style.textDecoration = 'line-through';
+      todos[index].style.opacity = '0.5';
+    }
+  });
 };
 
 export default loadTasks;

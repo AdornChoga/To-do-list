@@ -13,9 +13,6 @@ const domEvents = () => {
   const input = document.querySelector('#add');
 
   refresh.addEventListener('click', () => {
-    let tasks = tasksData.fetchData();
-    tasks = [];
-    tasksData.setData(tasks);
     loadTasks(listContainer);
   });
 
@@ -64,18 +61,7 @@ const domEvents = () => {
         checkBox(event.target.checked, id);
         event.target.checked = false;
       }
-    }
-  });
-
-  listContainer.addEventListener('mouseover', (event) => {
-    if (event.target.classList.contains('option')) {
-      event.target.style.cursor = 'all-scroll';
-    }
-    if (event.target.classList.contains('delete')) {
-      event.target.style.cursor = 'pointer';
-    }
-    if (event.target.classList.contains('save')) {
-      event.target.style.cursor = 'pointer';
+      loadTasks(listContainer);
     }
   });
 
@@ -96,14 +82,6 @@ const domEvents = () => {
     tasksData.setData(tasks);
     updateIndexes(tasksData.fetchData());
     loadTasks(listContainer);
-  });
-
-  clear.addEventListener('mouseover', () => {
-    clear.style.cursor = 'pointer';
-  });
-
-  refresh.addEventListener('mouseover', () => {
-    refresh.style.cursor = 'pointer';
   });
 };
 
