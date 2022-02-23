@@ -1,8 +1,6 @@
 import tasksData from './local_data.js';
 
-const listContainer = document.querySelector('.dynamic');
-
-function loadTasks() {
+const loadTasks = (listContainer) => {
   listContainer.innerHTML = '';
   if (localStorage.getItem('tasks') === null) {
     tasksData.setData([]);
@@ -19,6 +17,6 @@ function loadTasks() {
     </li>
     `;
   }
-}
+};
 
-export { listContainer, loadTasks };
+export default loadTasks;

@@ -1,7 +1,7 @@
 import tasksData from './local_data.js';
-import { listContainer, loadTasks } from './load.js';
+import loadTasks from './load.js';
 
-const addTask = (taskInput) => {
+const addTask = (taskInput, listContainer) => {
   const tasks = tasksData.fetchData();
   if (taskInput.value !== '') {
     const todo = { description: taskInput.value, completed: false, id: tasks.length };
@@ -17,7 +17,7 @@ const addTask = (taskInput) => {
     tasks.push(todo);
     tasksData.setData(tasks);
     listContainer.innerHTML = '';
-    loadTasks();
+    loadTasks(listContainer);
   }
 };
 

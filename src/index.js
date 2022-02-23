@@ -1,6 +1,7 @@
 import './index.css';
-import { loadTasks } from './modules/load.js';
+import loadTasks from './modules/load.js';
 import domEvents from './modules/dom_events.js';
 
-loadTasks();
+const listContainer = document.querySelector('.dynamic');
+loadTasks(listContainer);
 domEvents();

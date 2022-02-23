@@ -1,9 +1,11 @@
 import tasksData from './local_data.js';
 
-export default function updateIndexes() {
-  const tasks = tasksData.fetchData();
+const updateIndexes = (tasks) => {
   tasks.forEach((task) => {
     task.id = tasks.indexOf(task);
-    tasksData.setData(tasks);
   });
-}
+  tasksData.setData(tasks);
+  return tasks;
+};
+
+export default updateIndexes;
