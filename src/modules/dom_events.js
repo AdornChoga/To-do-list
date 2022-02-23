@@ -13,9 +13,6 @@ const domEvents = () => {
   const input = document.querySelector('#add');
 
   refresh.addEventListener('click', () => {
-    let tasks = tasksData.fetchData();
-    tasks = [];
-    tasksData.setData(tasks);
     loadTasks(listContainer);
   });
 
