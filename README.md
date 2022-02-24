@@ -1,21 +1,17 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Todo-list
 
-# To-do-list
-
-> In this project I created the structure of a minimalist To-Do-List using HTML and styled it using CSS. I loaded the tasks on the to-do-list dynamically using JavaScript.
-> I also used JavaScript to for the add-remove task functionality.
-I used webpack to bundle the modules in the code base.
+> Todo-list is a miniature app for organizing your day. In the app you can add your todos and checking the completed ones. You can also delete todos one at a time or deleted all the completed todos at once.
 
 ## Built With
 
-- HTMl
+- HTML
 - CSS
 - JavaScript
 - Webpack
 
 ## Live Demo
 
-[Live Demo Link](https://adornchoga.github.io/To-do-list/)
+[View live on Netlify](https://silly-shannon-8ded48.netlify.app/)
 
 ## Getting Started
 
@@ -23,17 +19,15 @@ To run this application please follow these steps:
 
 1.Clone the repo onto you local machine
   - to clone click on the green 'Code' button and copy the HTTPS link.
-  -using 'git clone <link>' command clone the repository on your local machine.
-2.Open the project using your browser
-  -you can either open the html file from the folder where you cloned this repository to see the live preview of this project or you can open it from Visual Studio Code.
-  -if you have  Visual Studio Code (Install it if you don't have it please) install Live Server from the extensions market place and then right click on the index.html file and click option 1 (which says : Open with Live Server). It will open up in your default browser.
-
+  -using 'git clone <link>' command, clone the repository on your local machine.
+1. Run npm install in the terminal.
+2. Run npm start to view the webisite in you default browser or open 'dist/index.html' using Live Server extension in Visual Studio Code
 
 
 ## Authors
 I worked on this project alone and here are my contact details
 
-- GitHub: [@asanchy](https://github.com/Asanchy)
+- GitHub: [@adornchoga](https://github.com/AdornChoga)
 - Twitter: [@adorn_choga](https://twitter.com/adorn_choga)
 - LinkedIn: [adorn-choga](https://www.linkedin.com/in/adorn-choga-076024201/)
 
